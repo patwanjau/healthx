@@ -1,0 +1,14 @@
+{
+  "properties": [
+    {
+      "name": "app.keystore.password",
+      "type": "java.lang.String",
+      "description": "Application KeyStore password."
+    },
+    {
+      "name": "app.keystore.alias",
+      "type": "java.lang.String",
+      "description": "Application KeyStore alias."
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+CREATE TABLE IF NOT EXISTS users
+(
+    id       INTEGER      NOT NULL PRIMARY KEY,
+    username VARCHAR(20)  NOT NULL UNIQUE,
+    password VARCHAR(128) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS client
+(
+    id     INTEGER      NOT NULL PRIMARY KEY,
+    name   VARCHAR(64)  NOT NULL UNIQUE,
+    secret VARCHAR(128) NOT NULL
+);

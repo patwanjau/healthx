@@ -1,0 +1,4 @@
+app:
+  keystore:
+    password: healthXKSP@ssw0rd
+    alias: healthXStore

@@ -31,12 +31,18 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.formLogin();
+        http.csrf(c -> c.ignoringAntMatchers("/users/**", "/clients/**"));
+        http.authorizeRequests()
+                .mvcMatchers("/users/**").permitAll()
+                .mvcMatchers("/clients/**").permitAll();
+        super.configure(http);
     }
 
     @Bean
     public UserDetailsService userDetailsService() {
         var userDetailsManager = new InMemoryUserDetailsManager();
-        var user = User.withUsername("healthx-user").password("P@ssw0rd").authorities("read").build();
+        var user = User.withUsername("healthx-user").password("P@ssw0rd")
+                .authorities("read", "write", "trust").build();
         userDetailsManager.createUser(user);
         return userDetailsManager;
     }

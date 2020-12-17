@@ -32,7 +32,7 @@ public class HealthXAuthServerConfig extends AuthorizationServerConfigurerAdapte
                 .withClient("healthX-client")
                 .secret("s3cr3t")
                 .authorizedGrantTypes("password")
-                .scopes("read");
+                .scopes("read", "trust");
     }
 
     @Autowired

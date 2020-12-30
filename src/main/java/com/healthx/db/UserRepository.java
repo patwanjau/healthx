@@ -8,5 +8,5 @@ import com.healthx.db.entities.User;
 
 public interface UserRepository extends CrudRepository<User, Integer> {
 
-    Optional<User> findByUsername(String name);
+    Optional<User> findUserByUsername(String name);
 }

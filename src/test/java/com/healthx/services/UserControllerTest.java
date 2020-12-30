@@ -46,7 +46,7 @@ public class UserControllerTest {
                 .andExpect(jsonPath("$.id").exists())
                 .andExpect(jsonPath("$.username").value("test-user"));
 
-        var savedUser = userRepository.findByUsername("test-user");
+        var savedUser = userRepository.findUserByUsername("test-user");
         Assertions.assertTrue(savedUser.isPresent());
     }
 

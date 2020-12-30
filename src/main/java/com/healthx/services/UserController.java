@@ -38,7 +38,7 @@ public class UserController extends BaseController {
 
     @GetMapping(value = "/{username}")
     public ResponseEntity<User> getUser(@PathVariable String username) {
-        var user = userRepository.findByUsername(username);
+        var user = userRepository.findUserByUsername(username);
         return user.map(value -> new ResponseEntity<>(value, HttpStatus.OK))
                 .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
